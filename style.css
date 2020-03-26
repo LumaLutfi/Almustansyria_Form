@@ -1,0 +1,82 @@
+img{
+      position: relative;
+      width:10%;
+       height:10%;
+         float: left;
+         top:-50px;
+}
+
+fieldset
+{
+background:#FFF;
+border:1px solid #ccc;
+padding:50px;
+margin-bottom:20px;
+}
+legend
+{
+background:#FFF;
+border:1px solid #ccc;
+box-shadow: 3px 3px 3px 3px silver; 
+padding:5px;
+}
+
+label{margin-bottom:20px}
+input{padding:8px; width:300px; display:block}
+select{padding:8px; width:300px; display:block}
+
+header, aside, article, footer, section {
+      display: block;
+     }
+     /* Get rid of white border around browser window */
+     body {
+      margin: 0;
+      padding: 50px;
+     }
+     /* Get rid of large margins on headings */
+     h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+     }
+     #wrapper {
+      /* Set your own widths, % for fluid, px for fixed */
+      width: 100%;
+      min-width: 780px;
+      max-width: 1260px; /* Vertical margins, and auto to center */
+      margin: 0 auto;
+     }
+     /* Sample styles for 3-column layout */
+     /* Section containing multiple columns */
+     .columns {
+      display: table;
+      border-collapse: collapse;
+      width: 100%; /* border is optional, style to taste */
+      border: solid 1px silver;
+     }
+     /* Aside columns in columns div */
+     .columns aside {
+      display: table-cell; /* Use any width and padding you like */
+      width: 18%;
+      padding: 1%;
+     }
+     /* Main article in the columns */
+     .columns article {
+      padding: 1%;
+      background: #ddd;
+     }
+     /*Optional, style to taste */
+     .columns .left {
+      background-color: #ddd;
+      border-right: solid 1px gray;
+     }
+     .columns .right {
+      background-color: #ddd;
+      border-left: solid 1px gray;
+     }
+     .imgcontainer{
+     border: 1px solid #ccc;
+     text-align: center;
+     width:50px;
+     height: 50px;
+     float: left;
+     padding: 50px;
+}
