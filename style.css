@@ -12,6 +12,9 @@
       font-weight: 900;
       padding:20px;
 }
+.gender{
+      display: inline;
+}
 .header{
 overflow: hidden;
 padding: 20px 10px;
@@ -29,9 +32,13 @@ width: 30%;
 text-align: center;
 color: white;
 }
-
+.container{
+      font-size: 16px;
+      font-weight: bold;
+}
 label{
       margin-bottom:20px;
+      
 }
 input{padding:8px; width:300px; display:block}
 select{padding:8px; width:300px; display:block}
