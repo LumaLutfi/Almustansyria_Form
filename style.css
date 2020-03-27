@@ -1,5 +1,4 @@
 
-
 .logo{
       position: relative;
       width:25%;
@@ -12,14 +11,14 @@
       font-size: 20px;
       font-weight: 900;
       padding:20px;
-
 }
 .header{
 overflow: hidden;
 padding: 20px 10px;
-
 }
-
+fieldset{
+      background:white;
+}
 legend
 {
 background:rgb(93, 143, 236);
@@ -28,9 +27,12 @@ box-shadow: 3px 3px 3px 3px silver;
 padding:5px;
 width: 30%;
 text-align: center;
+color: white;
 }
 
-label{margin-bottom:20px}
+label{
+      margin-bottom:20px;
+}
 input{padding:8px; width:300px; display:block}
 select{padding:8px; width:300px; display:block}
 
@@ -53,6 +55,19 @@ header, aside, article, footer, section {
       max-width: 1260px; /* Vertical margins, and auto to center */
       margin: 0 auto;
      }
+     .container {
+      padding: 16px;
+      background-color: white;
+    }
+    input[type=text] {
+      width: 50%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+
      /* Sample styles for 3-column layout */
      /* Section containing multiple columns */
      .columns {

@@ -24,30 +24,45 @@
                 </div>                   
 </div>
 <div class="columns">
-              <aside class="left"> <!--left column-->
-             
+              <aside class="left"> <!--left column-->        
              </aside>
 
-
 <body dir="rtl">
-       <article>
+    <div class="container">
 <form>
 <fieldset>
 <legend><h2> بيانات شخصية </h2> </legend><br><br>
-الاسم الرباعي واللقب <input type="text"> <br> <br>
 <div class="imgcontainer">
-       <img src="" alt="Profile picture" class="" >
+        <img src="" alt="Profile picture" class="" >
+ </div>
+<lable><br>الاسم الرباعي واللقب</br></lable>
+    <input type="text" name="full_name" required>
+
+<lable><br>اسم الام الثلاثي</br></lable>
+      <input type="text" name="mother_name" required>
+
+<lable><br>تاريخ التولد</br></lable>
+        <input type="date" name="birtday" required>
+
+    <div class="gender">
+<lable><br>الجنس :</br></lable>
+   <input type="radio" name="gen" style="padding: 20px">ذكر
+   <input type="radio" name="gen">انثى
 </div>
-اسم الام الثلاثي      <input type="text"> <br> <br>
-تاريخ التولد        <input type="date"><br> <br>
-الجنس : <br>
-<input type="radio" name="gen">ذكر<br>
-<input type="radio" name="gen">انثى <br><br>
- المحافظة<input type="text"> <br><br>
- المحلة<input type="nobr"> <br> <br>
- الزقاق<input type="nobr"> <br> <br>
-دار <input type="nobr"> <br> <br>
-<label> الحالة الزوجية</label>
+
+<label><br>المحافظة</br></label>
+    <input type="text" name="city"> 
+
+<label><br>المحلة</br></label>
+    <input type="nobr" name="street">
+
+<label><br>الزقاق</br></label>
+    <input type="nobr" name="alley"> 
+
+ <lable><br>دار</br></lable>
+    <input type="nobr" name="house">
+
+<label><br> الحالة الزوجية</br></label>
 <select>
  <option> الحالة الزوجية <option>
  <option> متزوج  <option>
@@ -61,11 +76,12 @@
 <option> اعزب <option>
 <option> عزباء </option>
 </select> 
-<be> <br> 
-الجامعة<input type="text"> <br><br>
-الكلية <input type="text"> <br><br>
+<label><br>الجامعة</br></label>
+    <input type="text" name="University"> 
+<label><br>الكلية</br></label>
+    <input type="text" name="college">
 
-<label> القسم</label>
+<label><br> القسم</br></label>
 <select>
 <option> القسم <option>
 <option> محاسبة <option>
@@ -74,9 +90,9 @@
 <option> احصاء <option>
 <option> اقتصاد <option>
 <option> العلوم المالية والمصرفية </option>
-</select> <br><br>
+</select> 
 
-<label> الشعبة او الوحدة </label>
+<label><br> الشعبة او الوحدة </br></label>
 <select>
 <ootion> مكتب العميد <option>
 <ootion> مكتب معاون العميد للشؤون الادارية  <option>
@@ -103,11 +119,14 @@
 <ootion> الشؤون القانونية  <option>
 <ootion> الاعلام والعلاقات العامة <option>
 <ootion> ضمان الجودة وتقييم الاداء  </option>
-</select> <br> <br>
-الاختصاص العام <input type="text"> <br> <br>
-الاختصاص الدقيق <input type="text"> <br><br>
+</select> 
+<label><br>الاختصاص العام</br></label>
+    <input type="text" name="genaral_major">
 
-<label> اللقب العلمي </label>
+<label><br>الاختصاص الدقيق</br></label>
+    <input type="text" name="specific_major"> <br><br>
+
+<label><br> اللقب العلمي </br></label>
 <select>
 <option>اللقب العلمي<option>
 <option>استاذ<option>
@@ -115,14 +134,28 @@
 <option> مدرس <option>
 <option> مدرس مساعد <option>
 <option> استاذ متمرس</option>
-</select> <br><br>
- تاريخ الحصول غلى اللقب <input type="date"><br> <br>
- العنوان الوظيفي <input type="text"> <br><br>
- تاريخ الحصول على العنوان الوظيفي <input type="date"> <br> <br>
- الدولة المانحة لاعلى شهادة <input type="text"> <br> <br>
- الجامعة المانحة لاعلى شهادة <input type="text"> <br> <br>
-تارريخ اول تعيين <input type="date"> <br> <br>
-تاريخ اعادة التعيين <input type="date"> <br> <br>
+</select> 
+
+<lable><br>تاريخ الحصول على اللقب </br></lable>
+ <input type="date" name="date_of_scintific_name">
+
+ <label><br>العنوان الوظيفي</br></label>
+  <input type="text" name="occupation_name">
+
+  <lable><br>تاريخ الحصول على العنوان الوظيفي </br></lable>
+ <input type="date" name="date_of_occupation"> 
+
+ <lable><br>الدولة المانحة لاعلى شهادة</br></lable>
+  <input type="text" name="county_degree">
+
+  <label><br>الجامعة المانحة لاعلى شهادة</br></label>
+  <input type="text" name="University_degree">
+
+  <label><br>تارريخ اول تعيين</br></label>
+ <input type="date" name="occup_start_date">
+
+ <lable><br>تاريخ اعادة التعيين</br></lable>
+ <input type="date" name="occup_restart_date"> 
 
 <label> الاجازات</label>
 <select>
@@ -132,16 +165,25 @@
 <option> بدون راتب <option>
 <option> مرضية  <option>
 <option> لاتوجد </option>
-</select><br> <br>
-صنف الموظف : <br>
-<input type="radio" name="stu">موظف
-<input type="radio" name="stu">تدريسي <br><br>
-رقم الامر الجامعي بالنعيين <input type="nobr"> <br><br>
-تاريخ الامر <input type="date"> <br><br> 
-الدرجة <input type="text"> <br><br>
-المرحلة <input type="text"> <br><br>
+</select>
 
-<label> اعلى شهادة</label>
+<lable><br>صنف الموظف :</br></lable>
+<input type="radio" name="stu">موظف
+<input type="radio" name="stu">تدريسي 
+
+<lable><br>رقم الامر الجامعي بالنعيين</br></lable>
+ <input type="nobr" name="number_of_admetion">
+
+ <lable><br>تاريخ الامر</br></lable>
+ <input type="date" name="date_of_admetion">
+ 
+ <lable><br>الدرجة</br></lable>
+ <input type="text" name="stage">
+
+ <label><br>المرحلة </br></label>
+<input type="text" name="level"> 
+
+<label><br> اعلى شهادة</br></label>
 <select>
 <option> اعلى شهادة <option>
 <option> ابتداتية  <option>
@@ -152,18 +194,22 @@
 <option> دبلوم عالي  <option>
 <option> دكتوراه </option>
 </select> <br><br>
-رقم الموبايل <input type="nobr"> <br><br>
-المنصب الاداري <input type="text"> <br><br>
-تاريخ استلامه <input type="date"> <br><br>
 
-<label> تحميل المستمسكات الاربعة </label>
-<input type="file"> <br><br> 
+<label><br>رقم الموبايل</br></label>
+ <input type="nobr" name="phone_no">
+
+ <label><br>المنصب الاداري</br></label>
+ <input type="text" name="المنصب الاداري">
+
+ <label><br>تاريخ استلامه</br></label>
+ <input type="date" name="تاريخ استلامه"> <br><br>
+
+<label><br> تحميل المستمسكات الاربعة </br></label>
+<input type="file" name="تحميل المستمسكات الاربعة">
 
 </fieldset>
-
-
 </form>
-</article>
+</div>
 <aside class="right">
 
 </aside>
