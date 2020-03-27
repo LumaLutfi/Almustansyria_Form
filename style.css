@@ -105,10 +105,11 @@ header, aside, article, footer, section {
      .imgcontainer{
      border: 1px solid #ccc;
      align-content: center;
-     width:50px;
+     width:70px;
      height: 50px;
      float: left;
      padding: 50px;
+     font-size: 10px;
 }
 input[type=button]{
       background-color: rgb(93, 143, 236);
