@@ -4,12 +4,14 @@
        <title>استمارة تسجيل منتسبي مركز الحاسبة </title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<link rel="stylesheet" href="style.css" type="text/css"/>
+<link  href="style.css" rel="stylesheet" type="text/css"/>
+<link href="stylePrint.css" rel="stylesheet" media="print">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.caret/0.1/jquery.caret.js"></script>
 <script src="https://www.solodev.com/assets/phone/jquery.mobilePhoneNumber.js"></script>
 <script src="validate.js"></script>
+
 <style></style>
 </head>
 <body>
@@ -39,8 +41,10 @@
 <legend><h2> بيانات شخصية </h2> </legend><br><br>
 <!-- user profile picture-->
 <div class="imgcontainer">
-        <input type="file" id="myfile" name="myfile" accept="image/*"/>
-        اضف صورتك الشخصيةهنا
+        <label class="custom-file-upload">
+    <input type="file" id="myfile" name="myfile" accept="image/*"/>
+    اضف صورتك هنا
+        </label>
  </div>
 
 <lable><br>الاسم الرباعي واللقب</br></lable>
@@ -52,82 +56,85 @@
 <lable><br>تاريخ التولد</br></lable>
         <input type="date" name="birtday" required>
 
-    <div>
-<lable><br>الجنس :</br></lable>
-   <input type="radio" name="gen" style="position: relative; top: 12px">ذكر
-   <input type="radio" name="gen" style="position: relative; top: 12px">انثى
-</div>
+    <div class="radio-space">
+        <lable style="margin-left: -90px">الجنس :</lable>
+            <input type="radio" name="gen" style="display: inline-block; position: relative; right:60px">ذكر
+            <input type="radio" name="gen" style="display: inline-block; position: relative; right: 60px">انثى
+    </div>
 
 <label><br>المحافظة</br></label>
     <input type="text" name="city"> 
 
 <label><br>المحلة</br></label>
-    <input type="nobr" name="street">
+    <input type="text" name="street">
 
 <label><br>الزقاق</br></label>
-    <input type="nobr" name="alley"> 
+    <input type="text" name="alley"> 
 
  <lable><br>دار</br></lable>
-    <input type="nobr" name="house">
+    <input type="text" name="house">
 
 <label><br> الحالة الزوجية</br></label>
-<select>
- <option> الحالة الزوجية <option>
- <option> متزوج  <option>
-<option> متزوجة <option>
-<option>  ارمل<option>
-<option> ارملة <option>
-<option> مطلق <option>
-<option> مطلقة <option>
-<option> ارمل <option>
-<option> ارملة <option>
-<option> اعزب <option>
-<option> عزباء </option>
+<select class="select-css" style="width: 300px">
+ <option value="0"> الحالة الزوجية </option>
+ <option value="1"> متزوج  </option>
+<option value="2"> متزوجة </option>
+<option value="3">  ارمل</option>
+<option value="4"> ارملة </option>
+<option value="5"> مطلق </option>
+<option value="6"> مطلقة </option>
+<option value="9"> اعزب </option>
+<option value="10"> عزباء </option>
 </select> 
+
 <label><br>الجامعة</br></label>
     <input type="text" name="University"> 
 <label><br>الكلية</br></label>
     <input type="text" name="college">
 
 <label><br> القسم</br></label>
-<select>
-<option> القسم <option>
-<option> محاسبة <option>
-<option> محاسبة <option>
-<option> ادارة اعمال <option>
-<option> احصاء <option>
-<option> اقتصاد <option>
+
+<select class="select-css" style="width: 300px">
+<option> القسم </option>
+<option> محاسبة </option>
+<option> محاسبة </option>
+<option> ادارة اعمال </option>
+<option> احصاء </option>
+<option> اقتصاد </option>
 <option> العلوم المالية والمصرفية </option>
 </select> 
 
 <label><br> الشعبة او الوحدة </br></label>
-<select>
-<ootion> مكتب العميد <option>
-<ootion> مكتب معاون العميد للشؤون الادارية  <option>
-<ootion> مكتب معاون العميد للشؤون العلمية والدراسات العلبا <option>
-<ootion>  مكتب معاون العميد لشؤون الطلبة والتسجيل  <option>
-<ootion>  الموارد البشرية <option>
-<ootion> الترقيات العلمية  <option>
-<ootion> الدراسات والتخطيط  <option>
-<ootion> البحث والتطوير <option>
-<ootion> المجلة الاقتصادية <option>
-<ootion> مجلة كلية الادارة والاقتصاد  <option>
-<ootion> الدراسات العليا <option>
-<ootion> التدريب الصيفي <option>
-<ootion> شؤون المواطنين  <option>
-<ootion> الحاسبة الالكترونية  <option>
-<ootion> الرقابة والتدقيق الداخلي  <option>
-<ootion> مكتب امانة مجلس الكلية  <option>
-<ootion> الشؤون العلمية  <option>
-<ootion> المكتبة ومجانية التعليم  <option>
-<ootion> شؤون الديوان <option>
-<ootion> التعليم المستمر <option>
-<ootion> التاهيل والتوظيف والمتابعة  <option>
-<ootion> الارشاد النفسي والتوجيه التربوي <option>
-<ootion> الشؤون القانونية  <option>
-<ootion> الاعلام والعلاقات العامة <option>
-<ootion> ضمان الجودة وتقييم الاداء  </option>
+<select class="select-css" style="width: 300px">
+<option>الشعبة او الوحدة</option>
+<option> مكتب العميد </option>
+<option> مكتب معاون العميد للشؤون الادارية  </option>
+<option> مكتب معاون العميد للشؤون العلمية والدراسات العلبا </option>
+<option>  مكتب معاون العميد لشؤون الطلبة والتسجيل  </option>
+<option>  الموارد البشرية </option>
+<option> الترقيات العلمية  </option>
+<option> الدراسات والتخطيط  </option>
+<option> البحث والتطوير </option>
+<option> المجلة الاقتصادية </option>
+<option> مجلة كلية الادارة والاقتصاد  </option>
+<option> الدراسات العليا </option>
+<option> التدريب الصيفي </option>
+<option> شؤون المواطنين  </option>
+<option> الحاسبة الالكترونية  </option>
+<option> الرقابة والتدقيق الداخلي  </option>
+<option> مكتب امانة مجلس الكلية  </option>
+<option> الشؤون العلمية  </option>
+<option> المكتبة ومجانية التعليم  </option>
+<option> شؤون الديوان </option>
+<option> التعليم المستمر </option>
+<option> التاهيل والتوظيف والمتابعة  </option>
+<option> الارشاد النفسي والتوجيه التربوي </option>
+<option> الشؤون القانونية  </option>
+<option> الاعلام والعلاقات العامة </option>
+<option> ضمان الجودة وتقييم الاداء  </option>
 </select> 
+
+
 <label><br>الاختصاص العام</br></label>
     <input type="text" name="genaral_major">
 
@@ -135,14 +142,15 @@
     <input type="text" name="specific_major"> <br><br>
 
 <label><br> اللقب العلمي </br></label>
-<select>
-<option>اللقب العلمي<option>
-<option>استاذ<option>
-<option> استاذ مساعد<option>
-<option> مدرس <option>
-<option> مدرس مساعد <option>
+<select class="select-css" style="width: 300px">
+<option>اللقب العلمي</option>
+<option>استاذ</option>
+<option> استاذ مساعد</option>
+<option> مدرس </option>
+<option> مدرس مساعد </option>
 <option> استاذ متمرس</option>
 </select> 
+
 
 <lable><br>تاريخ الحصول على اللقب </br></lable>
  <input type="date" name="date_of_scintific_name">
@@ -165,55 +173,93 @@
  <lable><br>تاريخ اعادة التعيين</br></lable>
  <input type="date" name="occup_restart_date"> 
 
-<label> الاجازات</label>
-<select>
-<option> الاجازات<option>
-<option> دراسية <option>
-<option> امومة <option>
-<option> بدون راتب <option>
-<option> مرضية  <option>
+<label> <br>الاجازات</br></label>
+
+<select class="select-css" style="width: 300px">
+<option> الاجازات</option>
+<option> دراسية </option>
+<option> امومة </option>
+<option> بدون راتب </option>
+<option> مرضية  </option>
 <option> لاتوجد </option>
 </select>
 
-<lable><br>صنف الموظف :</br></lable>
-<input type="radio" name="stu">موظف
-<input type="radio" name="stu">تدريسي 
 
-<lable><br>رقم الامر الجامعي بالنعيين</br></lable>
+<div class="radio-space">
+<lable style="margin-left: -160px">صنف الموظف :</lable>
+<input type="radio" name="stu" style="display: inline-block; position: relative; right:70px">موظف
+<input type="radio" name="stu" style="display: inline-block; position: relative; right:80px">تدريسي 
+</div>
+
+<lable><br>رقم الامر الجامعي بالتعيين</br></lable>
  <input type="nobr" name="number_of_admetion">
 
  <lable><br>تاريخ الامر</br></lable>
  <input type="date" name="date_of_admetion">
  
  <lable><br>الدرجة</br></lable>
- <input type="text" name="stage">
+ <select class="select-css" style="width: 300px">
+    <option> الاولى</option>
+    <option> الثانية </option>
+    <option> الثالثة </option>
+    <option> الرابعة </option>
+    <option> الخامسة </option>
+    <option> السادسة </option>
+    <option> السابعة </option>
+    <option> الثامنة </option>
+    <option> التاسعة </option>
+    <option> العاشرة </option> 
+    </select>
 
  <label><br>المرحلة </br></label>
-<input type="text" name="level"> 
+ <select class="select-css" style="width: 300px">
+    <option> الاولى</option>
+    <option> الثانية </option>
+    <option> الثالثة </option>
+    <option> الرابعة </option>
+    <option> الخامسة </option>
+    <option> السادسة </option>
+    <option> السابعة </option>
+    <option> الثامنة </option>
+    <option> التاسعة </option>
+    <option> العاشرة </option> 
+    </select>
 
 <label><br> اعلى شهادة</br></label>
-<select>
-<option> اعلى شهادة <option>
-<option> ابتداتية  <option>
-<option> متوسطة <option>
-<option> اعدادية <option>
-<option> دبلوم  <option>
-<option> ماجستير <option>
-<option> دبلوم عالي  <option>
+<select class="select-css" style="width: 300px">
+<option> اعلى شهادة </option>
+<option> ابتداتية  </option>
+<option> متوسطة </option>
+<option> اعدادية </option>
+<option> دبلوم  </option>
+<option> ماجستير </option>
+<option> دبلوم عالي  </option>
 <option> دكتوراه </option>
-</select> <br><br>
+</select>
 
 <label><br>رقم الموبايل</br></label>
  <input type="nobr" name="phone_no">
 
  <label><br>المنصب الاداري</br></label>
- <input type="text" name="المنصب الاداري">
-
+ <select class="select-css" style="width: 300px">
+    <option>المنصب الاداري</option>
+    <option> عميد </option>
+    <option> معاون العميد للشؤون الادارية   </option>
+    <option> معاون العميد للشؤون العلمية  </option>
+    <option> معاون العميد لشؤون الطلبة  </option>
+    <option> رئيس قسم  </option>
+    <option> مقرر قسم  </option>
+    <option> مسؤول شعبة  </option>
+    <option> مسؤول وحدة  </option>
+    <option> لايوجد  </option>  
+    </select>
+    
  <label><br>تاريخ استلامه</br></label>
  <input type="date" name="تاريخ استلامه"> <br><br>
-
-<label><br> تحميل المستمسكات الاربعة </br></label>
+<div>اضافة المستمسكات المطلوبة
+<label class="custom-file-upload"><br> تحميل المستمسكات الاربعة </br></label>
 <input type="file" name="تحميل المستمسكات الاربعة">
+</div>
 
 <div class="btn">
 <input type="button" value="ارسال" >
@@ -227,7 +273,7 @@
 <aside class="right">
 </aside>
 <footer>
-
+       
 </footer>
 </div>
 </body>

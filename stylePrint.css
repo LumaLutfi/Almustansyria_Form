@@ -1,0 +1,8 @@
+/* Styles for the printer-friendly version of the page */ 
+/* Remove background colors and images, use black ink */ 
+* { background: transparent !important; color: black !important; } 
+body { width: auto !important; font-size:12pt; }
+/* Size to fit width of the printed page */ 
+#wrapper { width: 98%; margin: 1em auto; max-width: none; min-width: none; }
+/* Limit width of images to their containing elements */
+img { max-width: 100% !important; }
