@@ -8,13 +8,15 @@
 <link href="stylePrint.css" rel="stylesheet" media="print">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.caret/0.1/jquery.caret.js"></script>
 <script src="https://www.solodev.com/assets/phone/jquery.mobilePhoneNumber.js"></script>
 <script src="validate.js"></script>
-
 <style></style>
 </head>
-<body>
+<body dir="rtl">
+        
 <script>
   //Make older browsers aware of new HTML5 layout tags
 'header aside article footer section figure figcaption'.replace(/\w+/g, function (n) { document.createElement(n) })
@@ -30,12 +32,12 @@
                      <div style="padding-right:65px;padding-top: 10px;"> شعبة الحاسبة الالكترونية </div>      
                 </div>                   
 </div>
+
+        <div class="container">
 <div class="columns">
               <aside class="left"> <!--left column-->        
              </aside>
 
-<body dir="rtl">
-    <div class="container">
 <form>
 <fieldset>
 <legend><h2> بيانات شخصية </h2> </legend><br><br>
@@ -55,12 +57,17 @@
 
 <lable><br>تاريخ التولد</br></lable>
         <input type="date" name="birtday" required>
-
-    <div class="radio-space">
-        <lable style="margin-left: -90px">الجنس :</lable>
-            <input type="radio" name="gen" style="display: inline-block; position: relative; right:60px">ذكر
-            <input type="radio" name="gen" style="display: inline-block; position: relative; right: 60px">انثى
-    </div>
+    
+            <label> <br>الجنس</br></label>
+              <div>
+                  <input type="radio" name="radio" style="position:relative;right:-100px; top: 20px;" id="radio6" />
+                  <label for="radio6">ذكر</label>
+              </div>
+              <div  style='display:inline;' class="funkyradio-success">
+                  <input type="radio" name="radio" style="position:relative;right:-100px; top: 20px;" id="radio7" />
+                  <label for="radio7">انثى</label>
+            </div><br>
+             
 
 <label><br>المحافظة</br></label>
     <input type="text" name="city"> 
@@ -75,7 +82,7 @@
     <input type="text" name="house">
 
 <label><br> الحالة الزوجية</br></label>
-<select class="select-css" style="width: 300px">
+<select class="select-css">
  <option value="0"> الحالة الزوجية </option>
  <option value="1"> متزوج  </option>
 <option value="2"> متزوجة </option>
@@ -94,7 +101,7 @@
 
 <label><br> القسم</br></label>
 
-<select class="select-css" style="width: 300px">
+<select class="select-css">
 <option> القسم </option>
 <option> محاسبة </option>
 <option> محاسبة </option>
@@ -105,7 +112,7 @@
 </select> 
 
 <label><br> الشعبة او الوحدة </br></label>
-<select class="select-css" style="width: 300px">
+<select class="select-css">
 <option>الشعبة او الوحدة</option>
 <option> مكتب العميد </option>
 <option> مكتب معاون العميد للشؤون الادارية  </option>
@@ -142,7 +149,7 @@
     <input type="text" name="specific_major"> <br><br>
 
 <label><br> اللقب العلمي </br></label>
-<select class="select-css" style="width: 300px">
+<select class="select-css">
 <option>اللقب العلمي</option>
 <option>استاذ</option>
 <option> استاذ مساعد</option>
@@ -175,7 +182,7 @@
 
 <label> <br>الاجازات</br></label>
 
-<select class="select-css" style="width: 300px">
+<select class="select-css">
 <option> الاجازات</option>
 <option> دراسية </option>
 <option> امومة </option>
@@ -185,11 +192,16 @@
 </select>
 
 
-<div class="radio-space">
-<lable style="margin-left: -160px">صنف الموظف :</lable>
-<input type="radio" name="stu" style="display: inline-block; position: relative; right:70px">موظف
-<input type="radio" name="stu" style="display: inline-block; position: relative; right:80px">تدريسي 
-</div>
+    <label> <br>صنف الموظف</br></label>
+
+      <div>
+          <input type="radio" name="radio" style="position:relative;right:-90px; top: 20px;" id="radio6" />
+          <label for="radio6">موظف</label>
+      </div>
+      <div>
+          <input type="radio" name="radio" style="position:relative;right:-90px; top: 20px;" id="radio7" />
+          <label for="radio7">تدريسي</label>
+     </div><br>
 
 <lable><br>رقم الامر الجامعي بالتعيين</br></lable>
  <input type="nobr" name="number_of_admetion">
@@ -198,7 +210,7 @@
  <input type="date" name="date_of_admetion">
  
  <lable><br>الدرجة</br></lable>
- <select class="select-css" style="width: 300px">
+ <select class="select-css">
     <option> الاولى</option>
     <option> الثانية </option>
     <option> الثالثة </option>
@@ -212,7 +224,7 @@
     </select>
 
  <label><br>المرحلة </br></label>
- <select class="select-css" style="width: 300px">
+ <select class="select-css" >
     <option> الاولى</option>
     <option> الثانية </option>
     <option> الثالثة </option>
@@ -226,7 +238,7 @@
     </select>
 
 <label><br> اعلى شهادة</br></label>
-<select class="select-css" style="width: 300px">
+<select class="select-css" >
 <option> اعلى شهادة </option>
 <option> ابتداتية  </option>
 <option> متوسطة </option>
@@ -238,10 +250,11 @@
 </select>
 
 <label><br>رقم الموبايل</br></label>
- <input type="nobr" name="phone_no">
-
+ <input type="tel" id="phone" name="phone_no" 
+ pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  placeholder="123-456-6789"><br>
+ <small>Format: 123-456-6789</small><br><br>
  <label><br>المنصب الاداري</br></label>
- <select class="select-css" style="width: 300px">
+ <select class="select-css" >
     <option>المنصب الاداري</option>
     <option> عميد </option>
     <option> معاون العميد للشؤون الادارية   </option>
@@ -259,7 +272,7 @@
 <div>اضافة المستمسكات المطلوبة
 <label class="custom-file-upload"><br> تحميل المستمسكات الاربعة </br></label>
 <input type="file" name="تحميل المستمسكات الاربعة">
-</div>
+</div><br>
 
 <div class="btn">
 <input type="button" value="ارسال" >
@@ -269,9 +282,10 @@
 
 </fieldset>
 </form>
-</div>
+
 <aside class="right">
 </aside>
+</div>
 <footer>
        
 </footer>
