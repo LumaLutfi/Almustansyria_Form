@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>JQuery Date Picker Demo</title>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script type="text/javascript">
+$(document).ready(function () {
+$("#datepicker").datepicker({
+dateFormat: "dd/mm/yy",
+changeMonth: true,
+changeYear: true,
+yearRange: "-75:+0"
+});
+
+});
+</script>
+
+<style>
+body {
+padding: 5px;
+font-family:Arial;
+}
+
+.ui-datepicker {
+background-color: #fff;
+}
+
+.ui-datepicker-header {
+background-color: #616eff;
+}
+
+.ui-datepicker-title {
+color: white;
+}
+
+.ui-widget-content .ui-state-default {
+border: 0px;
+text-align: center;
+background: #fff;
+font-weight: normal;
+color: #000;
+}
+
+.ui-widget-content .ui-state-default:hover {
+border: 0px;
+text-align: center;
+background: #000;
+font-weight: normal;
+color: #fff;
+}
+
+.ui-widget-content .ui-state-active {
+border: 0px;
+background: #616eff;
+color: #fff;
+}
+
+</style>
+</head>
+<body>
+<h1>Select a Date</h1>
+<p>Date: <input type="text" id="datepicker"></p>
+</body>
+</html>

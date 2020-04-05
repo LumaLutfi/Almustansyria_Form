@@ -12,15 +12,24 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.caret/0.1/jquery.caret.js"></script>
 <script src="https://www.solodev.com/assets/phone/jquery.mobilePhoneNumber.js"></script>
-<script src="validate.js"></script>
+<!------code for jQuery datepicker-->
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<!------------------------------------>
+
+<script src="jQuery.js" type="text/javascript"></script>
+<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+
+    <!-- Make older browsers aware of new HTML5 layout tags -->
+  <script>'header aside article footer section figure figcaption'.replace(/\w+/g, function (n) { document.createElement(n) })
+  </script>
 <style></style>
 </head>
 <body dir="rtl">
-        
-<script>
-  //Make older browsers aware of new HTML5 layout tags
-'header aside article footer section figure figcaption'.replace(/\w+/g, function (n) { document.createElement(n) })
-</script>
 <div id="wrapper">
 <!-- Header is logo, title, or other info at top of each page -->
 <div class="header">
@@ -56,7 +65,7 @@
       <input type="text" name="mother_name" required>
 
 <lable><br>تاريخ التولد</br></lable>
-        <input type="date" name="birtday" required>
+<input type="text" id="datepicker1" placeholder="DD/MM/YYYY" class="datpicker" name="تاريخ التولد">
     
             <label> <br>الجنس</br></label>
               <div>
@@ -146,7 +155,7 @@
     <input type="text" name="genaral_major">
 
 <label><br>الاختصاص الدقيق</br></label>
-    <input type="text" name="specific_major"> <br><br>
+    <input type="text" name="specific_major"> 
 
 <label><br> اللقب العلمي </br></label>
 <select class="select-css">
@@ -160,25 +169,26 @@
 
 
 <lable><br>تاريخ الحصول على اللقب </br></lable>
- <input type="date" name="date_of_scintific_name">
+ <input type="text" id="datepicker2" placeholder="DD/MM/YYYY" class="datpicker" name="تاريخ الحصول على اللقب">
 
  <label><br>العنوان الوظيفي</br></label>
   <input type="text" name="occupation_name">
 
-  <lable><br>تاريخ الحصول على العنوان الوظيفي </br></lable>
- <input type="date" name="date_of_occupation"> 
+  
+<label><br>تاريخ الحصول على العنوان الوظيفي</br></label>
+    <input type="text" id="datepicker3" placeholder="DD/MM/YYYY" class="datpicker" name="تاريخ الحصول على العنوان الوظيفي">
 
  <lable><br>الدولة المانحة لاعلى شهادة</br></lable>
-  <input type="text" name="county_degree">
+  <input type="text" name="الدولة المانحة لاعلى شهادة">
 
   <label><br>الجامعة المانحة لاعلى شهادة</br></label>
   <input type="text" name="University_degree">
 
-  <label><br>تارريخ اول تعيين</br></label>
- <input type="date" name="occup_start_date">
+  <label><br>تاريخ اول تعيين</br></label>
+ <input type="text" id="datepicker5" placeholder="DD/MM/YYYY" class="datpicker" name="تاريخ اول تعيين">
 
  <lable><br>تاريخ اعادة التعيين</br></lable>
- <input type="date" name="occup_restart_date"> 
+ <input type="text" id="datepicker6" placeholder="DD/MM/YYYY" class="datpicker" name="تاريخ اعادة التعيين"> 
 
 <label> <br>الاجازات</br></label>
 
@@ -204,10 +214,10 @@
      </div><br>
 
 <lable><br>رقم الامر الجامعي بالتعيين</br></lable>
- <input type="nobr" name="number_of_admetion">
+ <input type="text" onkeypress="validate(event)" name="number_of_admetion">
 
  <lable><br>تاريخ الامر</br></lable>
- <input type="date" name="date_of_admetion">
+ <input type="text" id="datepicker7" placeholder="DD/MM/YYYY" name="تاريخ الامر">
  
  <lable><br>الدرجة</br></lable>
  <select class="select-css">
@@ -252,7 +262,7 @@
 <label><br>رقم الموبايل</br></label>
  <input type="tel" id="phone" name="phone_no" 
  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  placeholder="123-456-6789"><br>
- <small>Format: 123-456-6789</small><br><br>
+
  <label><br>المنصب الاداري</br></label>
  <select class="select-css" >
     <option>المنصب الاداري</option>
@@ -268,7 +278,7 @@
     </select>
     
  <label><br>تاريخ استلامه</br></label>
- <input type="date" name="تاريخ استلامه"> <br><br>
+ <input type="text"  id="datepicker8" placeholder="DD/MM/YYYY" name="تاريخ استلامه"> <br><br>
 <div>اضافة المستمسكات المطلوبة
 <label class="custom-file-upload"><br> تحميل المستمسكات الاربعة </br></label>
 <input type="file" name="تحميل المستمسكات الاربعة">
@@ -287,7 +297,7 @@
 </aside>
 </div>
 <footer>
-       
+    <script src="validate.js"></script>      
 </footer>
 </div>
 </body>
