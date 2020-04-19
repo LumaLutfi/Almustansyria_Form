@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-       <title>استمارة تسجيل منتسبي مركز الحاسبة </title>
+       <title>استمارة تسجيل منتسبي كليةالادارة والاقتصاد </title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <link  href="style.css" rel="stylesheet" type="text/css"/>
@@ -16,7 +16,7 @@
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <!------------------------------------>
 
 <script src="jQuery.js" type="text/javascript"></script>
@@ -29,17 +29,17 @@
   </script>
 <style></style>
 </head>
-<body dir="rtl">
+<body dir="rtl" >
 <div id="wrapper">
 <!-- Header is logo, title, or other info at top of each page -->
 <div class="header">
-        <img src="logo1.jpg" class="logo"/>
+    <img src="logo1.jpg" class="logo"/>
         <legend ><h1> بيانات منتسب </h1> </legend>
               <div id="logobox" >
-                     <div style="padding-right:80px;padding-bottom: 10px;"> الجامعة المستنصرية</div>
-                     <div style="padding-right:80px;">كلية الادارة والاقتصاد </div>
-                     <div style="padding-right:65px;padding-top: 10px;"> شعبة الحاسبة الالكترونية </div>      
-                </div>                   
+                <div style="padding-right:40px;padding-bottom: 10px;">وزارة التعليم العالي والبحث العلمي</div>
+                <div style="padding-right:80px;padding-bottom: 10px;"> الجامعة المستنصرية</div>
+                <div style="padding-right:80px;">كلية الادارة والاقتصاد </div>     
+              </div>                   
 </div>
 
         <div class="container">
@@ -47,7 +47,7 @@
               <aside class="left"> <!--left column-->        
              </aside>
 
-<form>
+<form class="form" name="vform" method="POST" action="" onsubmit="return Validate()" id="myForm">
 <fieldset>
 <legend><h2> بيانات شخصية </h2> </legend><br><br>
 <!-- user profile picture-->
@@ -57,41 +57,49 @@
     اضف صورتك هنا
         </label>
  </div>
-
+<div id="name_div">
 <lable><br>الاسم الرباعي واللقب</br></lable>
-    <input type="text" name="full_name" required>
-
+    <input type="text" name="الاسم الرباعي واللقب" id="name">
+        <div id="name_error" class="val_error"></div>
+</div>
 <lable><br>اسم الام الثلاثي</br></lable>
-      <input type="text" name="mother_name" required>
+      <input type="text" name="اسم الام الثلاثي" id="motherName">
+        <div id="motherName_error" class="val_error"></div>
 
 <lable><br>تاريخ التولد</br></lable>
 <input type="text" id="datepicker1" placeholder="DD/MM/YYYY" class="datpicker" name="تاريخ التولد">
-    
-            <label> <br>الجنس</br></label>
+       <div id="birthday_error" class="val_error"></div>
+            
+        <label> <br>الجنس</br></label>
+            <hr style="width:20%; float:right"></hr><br>
               <div>
-                  <input type="radio" name="radio" style="position:relative;right:-100px; top: 20px;" id="radio6" />
+                  <input type="radio" name="الجنس" onclick="genderVerify()" style="position:relative;right: 70px;" id="male" />
                   <label for="radio6">ذكر</label>
               </div>
-              <div  style='display:inline;' class="funkyradio-success">
-                  <input type="radio" name="radio" style="position:relative;right:-100px; top: 20px;" id="radio7" />
+              <div >
+                  <input type="radio" name="الجنس" onclick="genderVerify()"style="position:relative;right:70px;" id="femal" />
                   <label for="radio7">انثى</label>
-            </div><br>
-             
-
+            </div>
+            <div id="gender_error" class="val_error"></div>    
+            
 <label><br>المحافظة</br></label>
-    <input type="text" name="city"> 
+    <input type="text" name="المحافظة" id="city"> 
+    <div id="city_error" class="val_error"></div>
 
 <label><br>المحلة</br></label>
-    <input type="text" name="street">
+    <input type="text" name="المحلة" id="street">
+    <div id="street_error" class="val_error"></div>
 
 <label><br>الزقاق</br></label>
-    <input type="text" name="alley"> 
+    <input type="text" name="الزقاق" id="alley"> 
+    <div id="alley_error" class="val_error"></div>
 
  <lable><br>دار</br></lable>
-    <input type="text" name="house">
-
+    <input type="text" name="دار" id="houseNo">
+    <div id="house_error" class="val_error"></div>
+    
 <label><br> الحالة الزوجية</br></label>
-<select class="select-css">
+<select class="select-css" id="stutas" name="الحالة الزوجية">
  <option value="0"> الحالة الزوجية </option>
  <option value="1"> متزوج  </option>
 <option value="2"> متزوجة </option>
@@ -102,26 +110,31 @@
 <option value="9"> اعزب </option>
 <option value="10"> عزباء </option>
 </select> 
+<div id="status_error" class="val_error"></div>
+
 
 <label><br>الجامعة</br></label>
-    <input type="text" name="University"> 
+    <input type="text" name="الجامعة" id="uni"> 
+    <div id="uni_error" class="val_error"></div>
+
 <label><br>الكلية</br></label>
-    <input type="text" name="college">
+    <input type="text" name="الكلية" id="coll">
+    <div id="coll_error" class="val_error"></div>
 
 <label><br> القسم</br></label>
-
-<select class="select-css">
+<select class="select-css" id="dep" name="القسم">
 <option> القسم </option>
-<option> محاسبة </option>
 <option> محاسبة </option>
 <option> ادارة اعمال </option>
 <option> احصاء </option>
 <option> اقتصاد </option>
 <option> العلوم المالية والمصرفية </option>
+<option> لايوجد </option>
 </select> 
+<div id="dep_error" class="val_error"></div>
 
 <label><br> الشعبة او الوحدة </br></label>
-<select class="select-css">
+<select class="select-css" id="major" name="الشعبة او الوحدة">
 <option>الشعبة او الوحدة</option>
 <option> مكتب العميد </option>
 <option> مكتب معاون العميد للشؤون الادارية  </option>
@@ -148,79 +161,83 @@
 <option> الشؤون القانونية  </option>
 <option> الاعلام والعلاقات العامة </option>
 <option> ضمان الجودة وتقييم الاداء  </option>
+<option> لايوجد </option>
 </select> 
-
+<div id="unit_error" class="val_error"></div>
 
 <label><br>الاختصاص العام</br></label>
-    <input type="text" name="genaral_major">
+    <input type="text" id="genaral_major" name="الاختصاص العام">
+    <div id="major_error" class="val_error"></div>
 
 <label><br>الاختصاص الدقيق</br></label>
-    <input type="text" name="specific_major"> 
+    <input type="text" id="specific_major" name="الاختصاص الدقيق"> 
 
 <label><br> اللقب العلمي </br></label>
-<select class="select-css">
-<option>اللقب العلمي</option>
-<option>استاذ</option>
-<option> استاذ مساعد</option>
-<option> مدرس </option>
-<option> مدرس مساعد </option>
-<option> استاذ متمرس</option>
-</select> 
-
+  <select class="select-css" id="address" name="اللقب العلمي">
+    <option>اللقب العلمي</option>
+    <option>استاذ</option>
+    <option> استاذ مساعد</option>
+    <option> مدرس </option>
+    <option> مدرس مساعد </option>
+    <option> استاذ متمرس</option>
+    <option> لايوجد </option>
+  </select> 
 
 <lable><br>تاريخ الحصول على اللقب </br></lable>
  <input type="text" id="datepicker2" placeholder="DD/MM/YYYY" class="datpicker" name="تاريخ الحصول على اللقب">
 
- <label><br>العنوان الوظيفي</br></label>
-  <input type="text" name="occupation_name">
-
+<label><br>العنوان الوظيفي</br></label>
+  <input type="text" id="position" name="العنوان الوظيفي">
+  <div id="position_error" class="val_error"></div>
   
 <label><br>تاريخ الحصول على العنوان الوظيفي</br></label>
     <input type="text" id="datepicker3" placeholder="DD/MM/YYYY" class="datpicker" name="تاريخ الحصول على العنوان الوظيفي">
+    <div id="posDate_error" class="val_error"></div>
 
  <lable><br>الدولة المانحة لاعلى شهادة</br></lable>
-  <input type="text" name="الدولة المانحة لاعلى شهادة">
+  <input type="text" name="الدولة المانحة لاعلى شهادة" id="country_issued">
+  <div id="countryIssued_error" class="val_error"></div>
 
   <label><br>الجامعة المانحة لاعلى شهادة</br></label>
-  <input type="text" name="University_degree">
-
+  <input type="text" name="الجامعة المانحة لاعلى شهادة" id="uni_issued">
+  <div id="uniIssued_error" class="val_error"></div>
+  
   <label><br>تاريخ اول تعيين</br></label>
- <input type="text" id="datepicker5" placeholder="DD/MM/YYYY" class="datpicker" name="تاريخ اول تعيين">
+  <input type="text" id="datepicker5" placeholder="DD/MM/YYYY" class="datpicker" name="تاريخ اول تعيين">
+  <div id="firstPositionDate_error" class="val_error"></div>
 
  <lable><br>تاريخ اعادة التعيين</br></lable>
  <input type="text" id="datepicker6" placeholder="DD/MM/YYYY" class="datpicker" name="تاريخ اعادة التعيين"> 
 
 <label> <br>الاجازات</br></label>
-
-<select class="select-css">
-<option> الاجازات</option>
-<option> دراسية </option>
-<option> امومة </option>
-<option> بدون راتب </option>
-<option> مرضية  </option>
-<option> لاتوجد </option>
-</select>
-
+ <select class="select-css" id="vacation" name="الاجازات">
+    <option> الاجازات</option>
+    <option> دراسية </option>
+    <option> امومة </option>
+    <option> بدون راتب </option>
+    <option> مرضية  </option>
+    <option> لاتوجد </option>
+ </select>
 
     <label> <br>صنف الموظف</br></label>
-
+    <hr style="width:20%; float:right"></hr><br>
       <div>
-          <input type="radio" name="radio" style="position:relative;right:-90px; top: 20px;" id="radio6" />
+          <input type="radio" name="موظف" style="position:relative;right:90px" id="employee" />
           <label for="radio6">موظف</label>
       </div>
       <div>
-          <input type="radio" name="radio" style="position:relative;right:-90px; top: 20px;" id="radio7" />
+          <input type="radio" name="تدريسي" style="position:relative;right:90px; " id="instructor" />
           <label for="radio7">تدريسي</label>
      </div><br>
 
 <lable><br>رقم الامر الجامعي بالتعيين</br></lable>
- <input type="text" onkeypress="validate(event)" name="number_of_admetion">
+ <input type="text" onkeypress="return num_validate(event)" id="id_hire" name="رقم الامر الجامعي بالتعيين">
 
  <lable><br>تاريخ الامر</br></lable>
- <input type="text" id="datepicker7" placeholder="DD/MM/YYYY" name="تاريخ الامر">
+ <input type="text" id="datepicker7" placeholder="DD/MM/YYYY" id="date_hire_issued" name="تاريخ الامر">
  
  <lable><br>الدرجة</br></lable>
- <select class="select-css">
+ <select class="select-css" id="emp_level" name="الدرجة">
     <option> الاولى</option>
     <option> الثانية </option>
     <option> الثالثة </option>
@@ -234,7 +251,7 @@
     </select>
 
  <label><br>المرحلة </br></label>
- <select class="select-css" >
+ <select class="select-css" id="emp_stage" name="المرحلة">
     <option> الاولى</option>
     <option> الثانية </option>
     <option> الثالثة </option>
@@ -245,26 +262,27 @@
     <option> الثامنة </option>
     <option> التاسعة </option>
     <option> العاشرة </option> 
-    </select>
+</select>
 
 <label><br> اعلى شهادة</br></label>
-<select class="select-css" >
-<option> اعلى شهادة </option>
-<option> ابتداتية  </option>
-<option> متوسطة </option>
-<option> اعدادية </option>
-<option> دبلوم  </option>
-<option> ماجستير </option>
-<option> دبلوم عالي  </option>
-<option> دكتوراه </option>
+<select class="select-css" id="eduction" name="اعلى شهادة">
+    <option> اعلى شهادة </option>
+    <option> ابتداتية  </option>
+    <option> متوسطة </option>
+    <option> اعدادية </option>
+    <option> دبلوم  </option>
+    <option> ماجستير </option>
+    <option> دبلوم عالي  </option>
+    <option> دكتوراه </option>
 </select>
 
 <label><br>رقم الموبايل</br></label>
- <input type="tel" id="phone" name="phone_no" 
- pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  placeholder="123-456-6789"><br>
-
+<ul>
+ <li><input type="tel" id="phoneNo" name="رقم الموبايل"  placeholder="0123-456-6789"></li><br>
+ <li>&nbsp;</li>
+</ul>
  <label><br>المنصب الاداري</br></label>
- <select class="select-css" >
+ <select class="select-css" id="position" name="المنصب الاداري">
     <option>المنصب الاداري</option>
     <option> عميد </option>
     <option> معاون العميد للشؤون الادارية   </option>
@@ -278,21 +296,22 @@
     </select>
     
  <label><br>تاريخ استلامه</br></label>
- <input type="text"  id="datepicker8" placeholder="DD/MM/YYYY" name="تاريخ استلامه"> <br><br>
-<div>اضافة المستمسكات المطلوبة
+ <input type="text"  id="datepicker8" placeholder="DD/MM/YYYY" name="تاريخ استلامه"> <br>
+
+ <div><p>اضافة المستمسكات المطلوبة</p>
 <label class="custom-file-upload"><br> تحميل المستمسكات الاربعة </br></label>
 <input type="file" name="تحميل المستمسكات الاربعة">
 </div><br>
 
 <div class="btn">
-<input type="button" value="ارسال" >
+<input type="submit" value="ارسال" name="submit" >
 <input type="button" value="تعديل" >
-<input type="button" value="الغاء">
+<input type="button" value="الغاء" onclick="reset()" value="reset form">
 </div>
 
 </fieldset>
 </form>
-
+ 
 <aside class="right">
 </aside>
 </div>

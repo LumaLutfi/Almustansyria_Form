@@ -56,7 +56,6 @@
             changeYear:true,
             yearRange:"-75:+0",
         });
-});
-
+    });
 
 
