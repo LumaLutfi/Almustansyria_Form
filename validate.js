@@ -17,7 +17,25 @@
       if(theEvent.preventDefault) theEvent.preventDefault();
     }
   }
- 
+ //phone validation
+function phoneValidate(){
+  var text = document.getElementById("text1").value;
+  if(text.length != 11){
+    document.getElementById("lbltext").innerHTML="please Enter 11 digits";
+    document.getElementById("lbltext").style.visibility="visible";
+    document.getElementById("lbltext").style.color="red";
+    return false;
+  }
+  if(text.match( /^[0-9]{11}$/)){
+    document.getElementById("lbltext").innerHTML="Valid";
+    document.getElementById("lbltext").style.visibility="visible";
+    document.getElementById("lbltext").style.color="green";
+  }else{
+   document.getElementById("lbltext").innerHTML="Invalid";
+   document.getElementById("lbltext").style.visibility="visible";
+   document.getElementById("lbltext").style.color="red";
+  }
+}
 //form validation
 const name = document.forms["vform"]["الاسم الرباعي واللقب"];
 const motherName = document.forms["vform"]["اسم الام الثلاثي"];
@@ -38,6 +56,17 @@ const posDate = document.forms["vform"]["تاريخ الحصول على العن
 const countryIssued = document.forms["vform"]["الدولة المانحة لاعلى شهادة"];
 const uniIssued = document.forms["vform"]["الجامعة المانحة لاعلى شهادة"];
 const firstPositionDate = document.forms["vform"]["تاريخ اول تعيين"];
+const reEmploymentDate = document.forms["vform"]["تاريخ اعادة التعيين"];
+const vacation = document.forms["vform"]["الاجازات"];
+const employeeType = document.forms["vform"]["صنف الموظف"];
+const issuedNo = document.forms["vform"]["رقم الامر الجامعي بالتعيين"];
+const issuedDate = document.forms["vform"]["تاريخ الامر"];
+const empLevel = document.forms["vform"]["الدرجة"];
+const empStage = document.forms["vform"]["المرحلة"];
+const education = document.forms["vform"]["اعلى شهادة"];
+const phoneNo = document.forms["vform"]["رقم الموبايل"];
+const empPosition = document.forms["vform"]["المنصب الاداري"];
+const posGivenDate = document.forms["vform"]["تاريخ استلامه"];
 
 const name_error = document.getElementById('name_error')
 const motherName_error = document.getElementById('motherName_error');
@@ -58,6 +87,17 @@ const posDate_error = document.getElementById('posDate_error');
 const countryIssued_error = document.getElementById('countryIssued_error');
 const uniIssued_error = document.getElementById('uniIssued_error');
 const firstPositionDate_error = document.getElementById('firstPositionDate_error');
+const reEmploymentDate_error = document.getElementById('reEmploymentDate_error');
+const vacation_error = document.getElementById('vacation_error');
+const employeeType_error = document.getElementById('employeeType_error');
+const issuedNo_error = document.getElementById('issuedNo_error');
+const issuedDate_error = document.getElementById('issuedDate_error');
+const empLevel_error = document.getElementById('empLevel_error');
+const emplStage_error = document.getElementById('empStage_error');
+const education_error = document.getElementById('education_error');
+const phoneNo_error = document.getElementById('phoneNo_error');
+const empPosition_error = document.getElementById('empPosition_error');
+const posGivenDate_error = document.getElementById('posGivenDate_error');
 
 name.addEventListener("blur", nameVerify, true);
 motherName.addEventListener("blur", motherNameVerify, true);
@@ -77,6 +117,15 @@ posDate.addEventListener("blur", posDateVerify, true);
 countryIssued.addEventListener("blur", countryIssuedVerify, true);
 uniIssued.addEventListener("blur", uniIssuedVerify, true);
 firstPositionDate.addEventListener("blur", firstPositionDateVerify, true);
+reEmploymentDate.addEventListener("blur", reEmploymentDateVerify, true);
+issuedNo.addEventListener("blur", issuedNoVerify, true);
+issuedDate.addEventListener("blur", issuedDateVerify, true);
+empLevel.addEventListener("blur", empLevelVerify, true);
+empStage.addEventListener("blur", empStageVerify, true);
+education.addEventListener("blur", educationVerify, true);
+phoneNo.addEventListener("blur", phoneNoVerify, true);
+empPosition.addEventListener("blur", empPositionVerify, true);
+posGivenDate.addEventListener("blur", posGivenDateVerify, true);
 
 function Validate(){
  if(name.value == ""){
@@ -188,6 +237,65 @@ if(unit.selectedIndex == 0){
     firstPositionDate.focus();
     return false;
    }
+   if(reEmploymentDate.value == ""){
+    reEmploymentDate.style.border = "1px solid red";
+    reEmploymentDate_error.textContent = "تاريخ اعادة التعيين مطلوب";
+    reEmploymentDate.focus();
+    return false;
+   }
+   if(vacation.selectedIndex == 0){
+    vacation.style.border = "1px solid red";
+    vacation_error.textContent = " نوع الاجازة مطلوب";
+    return false;
+    }
+    if((employeeType[0].checked == false) && (employeeType[1].checked == false)){
+      employeeType_error.textContent = "نوع الموظف مطلوب";
+      return false;
+      }
+      if(issuedNo.value == ""){
+        issuedNo.style.border = "1px solid red";
+        issuedNo_error.textContent = "رقم الامر الجامعي بالتعيين مطلوب";
+        issuedNo.focus();
+        return false;
+      }
+      if(issuedDate.value == ""){
+        issuedDate.style.border = "1px solid red";
+        issuedDate_error.textContent = "تاريخ الامر مطلوب";
+        issuedDate.focus();
+        return false;
+       }
+  if(empLevel.selectedIndex == 0){
+    empLevel.style.border = "1px solid red";
+    empLevel_error.textContent = " الدرجة مطلوبة";
+    return false;
+    }
+  if(empStage.selectedIndex == 0){
+    empStage.style.border = "1px solid red";
+    empStage_error.textContent = " المرحلة مطلوبة";
+    return false;
+    }
+    if(education.selectedIndex == 0){
+      education.style.border = "1px solid red";
+      education_error.textContent = " اعلى شهادة مطلوبة";
+      return false;
+      }
+      if(phoneNo.value == ""){
+        phoneNo.style.border = "1px solid red";
+        phoneNo_error.textContent = " رقم الموبايل مطلوب";
+        phoneNo.focus();
+        return false;
+      }
+      if(empPosition.selectedIndex == 0){
+        empPosition.style.border = "1px solid red";
+        empPosition_error.textContent = " المنصب الاداري مطلوبة";
+        return false;
+        }
+        if(posGivenDate.value == ""){
+          posGivenDate.style.border = "1px solid red";
+          posGivenDate_error.textContent = "تاريخ استلام المنصب مطلوب";
+          posGivenDate.focus();
+          return false;
+         }
 }
 
 
@@ -311,6 +419,65 @@ function firstPositionDateVerify(){
     return true;
   }
 }
+function reEmploymentDateVerify(){
+  if(reEmploymentDate.value !=""){
+    reEmploymentDate.style.border = "1px solid rgb(93, 143, 236)";
+    reEmploymentDate_error.innerHTML="";
+    return true;
+  }
+}
+function vacationVerify(){
+  document.getElementById('vacation_error').innerHTML="";
+  vacation.style.border = "1px solid rgb(93, 143, 236)";
+}
+function employeeTypeVerify(){
+  document.getElementById('employeeType_error').innerHTML = '';
+}
+function issuedNoVerify(){
+  if(issuedNo.value !=""){
+    issuedNo.style.border = "1px solid rgb(93, 143, 236)";
+    issuedNo_error.innerHTML="";
+    return true;
+  }
+}
+function issuedDateVerify(){
+  if(issuedDate.value !=""){
+    issuedDate.style.border = "1px solid rgb(93, 143, 236)";
+    issuedDate_error.innerHTML="";
+    return true;
+  }
+}
+function empLevelVerify(){
+  document.getElementById('empLevel_error').innerHTML="";
+  empLevel.style.border = "1px solid rgb(93, 143, 236)";
+}
+function empStageVerify(){
+  document.getElementById('empStage_error').innerHTML="";
+  empStage.style.border = "1px solid rgb(93, 143, 236)";
+}
+function educationVerify(){
+  document.getElementById('education_error').innerHTML="";
+  education.style.border = "1px solid rgb(93, 143, 236)";
+}
+function phoneNoVerify(){
+  if(phoneNo.value !=""){
+    phoneNo.style.border = "1px solid rgb(93, 143, 236)";
+    phoneNo_error.innerHTML="";
+    return true;
+  }
+}
+function empPositionVerify(){
+  document.getElementById('empPosition_error').innerHTML="";
+  empPosition.style.border = "1px solid rgb(93, 143, 236)";
+}
+function posGivenDateVerify(){
+  if(posGivenDate.value !=""){
+    posGivenDate.style.border = "1px solid rgb(93, 143, 236)";
+    posGivenDate_error.innerHTML="";
+    return true;
+  }
+}
+
 //reset form
 function reset() {
   document.getElementById("myForm").reset();

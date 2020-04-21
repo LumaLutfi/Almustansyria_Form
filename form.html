@@ -208,6 +208,7 @@
 
  <lable><br>تاريخ اعادة التعيين</br></lable>
  <input type="text" id="datepicker6" placeholder="DD/MM/YYYY" class="datpicker" name="تاريخ اعادة التعيين"> 
+    <div id="reEmploymentDate_error" class="val_error"></div>
 
 <label> <br>الاجازات</br></label>
  <select class="select-css" id="vacation" name="الاجازات">
@@ -218,26 +219,33 @@
     <option> مرضية  </option>
     <option> لاتوجد </option>
  </select>
+ <div id="vacation_error" class="val_error"></div>
 
     <label> <br>صنف الموظف</br></label>
     <hr style="width:20%; float:right"></hr><br>
       <div>
-          <input type="radio" name="موظف" style="position:relative;right:90px" id="employee" />
+          <input type="radio" name="صنف الموظف" onclick="employeeTypeVerify()"
+          style="position:relative;right:90px" id="employee" />
           <label for="radio6">موظف</label>
       </div>
       <div>
-          <input type="radio" name="تدريسي" style="position:relative;right:90px; " id="instructor" />
+          <input type="radio" name="صنف الموظف" onclick="employeeTypeVerify()"
+          style="position:relative;right:90px; " id="instructor" />
           <label for="radio7">تدريسي</label>
      </div><br>
+     <div id="employeeType_error" class="val_error"></div>
 
 <lable><br>رقم الامر الجامعي بالتعيين</br></lable>
  <input type="text" onkeypress="return num_validate(event)" id="id_hire" name="رقم الامر الجامعي بالتعيين">
+   <div id="issuedNo_error" class="val_error"></div>
 
  <lable><br>تاريخ الامر</br></lable>
  <input type="text" id="datepicker7" placeholder="DD/MM/YYYY" id="date_hire_issued" name="تاريخ الامر">
+ <div id="issuedDate_error" class="val_error"></div>
  
  <lable><br>الدرجة</br></lable>
  <select class="select-css" id="emp_level" name="الدرجة">
+    <option> الدرجة</option>
     <option> الاولى</option>
     <option> الثانية </option>
     <option> الثالثة </option>
@@ -249,9 +257,11 @@
     <option> التاسعة </option>
     <option> العاشرة </option> 
     </select>
+    <div id="empLevel_error" class="val_error"></div>
 
  <label><br>المرحلة </br></label>
  <select class="select-css" id="emp_stage" name="المرحلة">
+    <option> المرحلة</option>
     <option> الاولى</option>
     <option> الثانية </option>
     <option> الثالثة </option>
@@ -263,6 +273,7 @@
     <option> التاسعة </option>
     <option> العاشرة </option> 
 </select>
+<div id="empStage_error" class="val_error"></div>
 
 <label><br> اعلى شهادة</br></label>
 <select class="select-css" id="eduction" name="اعلى شهادة">
@@ -275,12 +286,15 @@
     <option> دبلوم عالي  </option>
     <option> دكتوراه </option>
 </select>
+<div id="education_error" class="val_error"></div>
 
 <label><br>رقم الموبايل</br></label>
-<ul>
- <li><input type="tel" id="phoneNo" name="رقم الموبايل"  placeholder="0123-456-6789"></li><br>
- <li>&nbsp;</li>
-</ul>
+ <input type="text" id="text1" name="رقم الموبايل"  
+ placeholder="01234567890" onkeyup="phoneValidate()"></li><br>
+ <label id="lbltext" style="color: red;visibility:hidden">Invalid</label>
+ <br>
+ <div id="phoneNo_error" class="val_error"></div>
+
  <label><br>المنصب الاداري</br></label>
  <select class="select-css" id="position" name="المنصب الاداري">
     <option>المنصب الاداري</option>
@@ -294,9 +308,11 @@
     <option> مسؤول وحدة  </option>
     <option> لايوجد  </option>  
     </select>
-    
+    <div id="empPosition_error" class="val_error"></div>
+ 
  <label><br>تاريخ استلامه</br></label>
  <input type="text"  id="datepicker8" placeholder="DD/MM/YYYY" name="تاريخ استلامه"> <br>
+ <div id="posGivenDate_error" class="val_error"></div>
 
  <div><p>اضافة المستمسكات المطلوبة</p>
 <label class="custom-file-upload"><br> تحميل المستمسكات الاربعة </br></label>
@@ -304,7 +320,7 @@
 </div><br>
 
 <div class="btn">
-<input type="submit" value="ارسال" name="submit" >
+<input type="submit" value="ارسال" name="submit" onclick="return phoneValidate()" >
 <input type="button" value="تعديل" >
 <input type="button" value="الغاء" onclick="reset()" value="reset form">
 </div>
