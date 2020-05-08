@@ -17,27 +17,9 @@
       if(theEvent.preventDefault) theEvent.preventDefault();
     }
   }
- //phone validation
-function phoneValidate(){
-  var text = document.getElementById("text1").value;
-  if(text.length != 11){
-    document.getElementById("lbltext").innerHTML="please Enter 11 digits";
-    document.getElementById("lbltext").style.visibility="visible";
-    document.getElementById("lbltext").style.color="red";
-    return false;
-  }
-  if(text.match( /^[0-9]{11}$/)){
-    document.getElementById("lbltext").innerHTML="Valid";
-    document.getElementById("lbltext").style.visibility="visible";
-    document.getElementById("lbltext").style.color="green";
-  }else{
-   document.getElementById("lbltext").innerHTML="Invalid";
-   document.getElementById("lbltext").style.visibility="visible";
-   document.getElementById("lbltext").style.color="red";
-  }
-}
+
 //form validation
-const name = document.forms["vform"]["الاسم الرباعي واللقب"];
+const name = document.forms["vform"]["fname"];
 const motherName = document.forms["vform"]["اسم الام الثلاثي"];
 const birthday = document.forms["vform"]["تاريخ التولد"];
 const gender = document.forms["vform"]["الجنس"]
@@ -477,7 +459,25 @@ function posGivenDateVerify(){
     return true;
   }
 }
-
+ //phone validation
+ function phoneValidate(){
+  var text = document.getElementById("text1").value;
+  if(text.length != 11){
+    document.getElementById("lbltext").innerHTML="الرجاء ادخل ١١ رقما";
+    document.getElementById("lbltext").style.visibility="visible";
+    document.getElementById("lbltext").style.color="red";
+    return false;
+  }
+  if(text.match( /^[0-9]{11}$/)){
+    document.getElementById("lbltext").innerHTML="Valid";
+    document.getElementById("lbltext").style.visibility="visible";
+    document.getElementById("lbltext").style.color="green";
+  }else{
+   document.getElementById("lbltext").innerHTML="Invalid";
+   document.getElementById("lbltext").style.visibility="visible";
+   document.getElementById("lbltext").style.color="red";
+  }
+}
 //reset form
 function reset() {
   document.getElementById("myForm").reset();
