@@ -9,5 +9,6 @@ function displayImage(e){
             document.querySelector('#profileDisplay').setAttribute('src', event.target.result);
         }
         reader.readAsDataURL(e.files[0]);
+    
     }
 }

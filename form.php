@@ -49,15 +49,15 @@ onsubmit="return Validate()" id="myForm" enctype="multipart/form-data">
 <fieldset>
 <legend><h2> بيانات شخصية </h2> </legend><br><br>
 <!-- user profile picture-->
-<?php if (!empty($msg)): ?>
-<div class="alert <?php echo $css_class; ?>">
-<?php echo $msg; ?>
-<?php endif; ?>
+<!-- <?php if (!empty($msg)): ?>
+<p class="imageUpload"><?php echo $msg;?></p>
+<?php endif; ?> -->
+<div class="text">
+اضف صورتك هنا</p></div>
     <div>    
     <img src="placeholder.png" id="profileDisplay" onclick="triggerClick()"/>
     <input type="file" id="profileImage" name="picture" onchange="displayImage(this)" 
-    style="display:none"> 
-  <p style="float:left; padding-top:90px">  اضف صورتك هنا</p>
+    style="display:none;"> 
 </div>   
 <div id="name_div">
 <lable><br>الاسم الرباعي واللقب</br></lable>
@@ -318,7 +318,7 @@ onsubmit="return Validate()" id="myForm" enctype="multipart/form-data">
 
  <div><p>اضافة المستمسكات المطلوبة</p>
 
-<input type="file" name="files[]" multiple><br>
+<input type="file" name="files[]" multiple="multiple"><br>
 </div><br>
 <?php include 'php/docUpload.php' ?>
 <div>

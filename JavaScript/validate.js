@@ -20,35 +20,36 @@
 
 //form validation
 const name = document.forms["vform"]["fname"];
-const motherName = document.forms["vform"]["اسم الام الثلاثي"];
-const birthday = document.forms["vform"]["تاريخ التولد"];
-const gender = document.forms["vform"]["الجنس"]
-const city = document.forms["vform"]["المحافظة"]
-const street = document.forms["vform"]["المحلة"]
-const alley = document.forms["vform"]["الزقاق"]
-const house = document.forms["vform"]["دار"]
-const status = document.forms["vform"]["الحالة الزوجية"]
-const university = document.forms["vform"]["الجامعة"]
-const college = document.forms["vform"]["الكلية"]
-const department = document.forms["vform"]["القسم"]
-const unit = document.forms["vform"]["الشعبة او الوحدة"]
-const major = document.forms["vform"]["الاختصاص العام"]
-const position = document.forms["vform"]["العنوان الوظيفي"]
-const posDate = document.forms["vform"]["تاريخ الحصول على العنوان الوظيفي"];
-const countryIssued = document.forms["vform"]["الدولة المانحة لاعلى شهادة"];
-const uniIssued = document.forms["vform"]["الجامعة المانحة لاعلى شهادة"];
-const firstPositionDate = document.forms["vform"]["تاريخ اول تعيين"];
-const reEmploymentDate = document.forms["vform"]["تاريخ اعادة التعيين"];
-const vacation = document.forms["vform"]["الاجازات"];
-const employeeType = document.forms["vform"]["صنف الموظف"];
-const issuedNo = document.forms["vform"]["رقم الامر الجامعي بالتعيين"];
-const issuedDate = document.forms["vform"]["تاريخ الامر"];
-const empLevel = document.forms["vform"]["الدرجة"];
-const empStage = document.forms["vform"]["المرحلة"];
-const education = document.forms["vform"]["اعلى شهادة"];
-const phoneNo = document.forms["vform"]["رقم الموبايل"];
-const empPosition = document.forms["vform"]["المنصب الاداري"];
-const posGivenDate = document.forms["vform"]["تاريخ استلامه"];
+const motherName = document.forms["vform"]["motherName"];
+const birthday = document.forms["vform"]["birthday"];
+const gender = document.forms["vform"]["gender"]
+const city = document.forms["vform"]["city"]
+const street = document.forms["vform"]["street"]
+const alley = document.forms["vform"]["alley"]
+const house = document.forms["vform"]["houseNo"]
+const status = document.forms["vform"]["stutas"]
+const university = document.forms["vform"]["university"]
+const college = document.forms["vform"]["college"]
+const department = document.forms["vform"]["department"]
+const unit = document.forms["vform"]["unit"]
+const major = document.forms["vform"]["genaralMajor"]
+const position = document.forms["vform"]["title"]
+const posDate = document.forms["vform"]["titleDate"];
+const countryIssued = document.forms["vform"]["country_issued"];
+const uniIssued = document.forms["vform"]["issuedCertificateUniversity"];
+const firstPositionDate = document.forms["vform"]["firstPositionDate"];
+const reEmploymentDate = document.forms["vform"]["reEmploymentDate"];
+const vacation = document.forms["vform"]["vacation"];
+const employeeType = document.forms["vform"]["employeeType"];
+const issuedNo = document.forms["vform"]["idHire"];
+const issuedDate = document.forms["vform"]["hireIsuuedDate"];
+const empLevel = document.forms["vform"]["empLevel"];
+const empStage = document.forms["vform"]["empStage"];
+const education = document.forms["vform"]["higherEducation"];
+const phoneNo = document.forms["vform"]["cellphone"];
+const empPosition = document.forms["vform"]["position"];
+const posGivenDate = document.forms["vform"]["positionDate"];
+
 
 const name_error = document.getElementById('name_error')
 const motherName_error = document.getElementById('motherName_error');
@@ -81,6 +82,7 @@ const phoneNo_error = document.getElementById('phoneNo_error');
 const empPosition_error = document.getElementById('empPosition_error');
 const posGivenDate_error = document.getElementById('posGivenDate_error');
 
+
 name.addEventListener("blur", nameVerify, true);
 motherName.addEventListener("blur", motherNameVerify, true);
 birthday.addEventListener("blur", birthdayVerify, true);
@@ -100,6 +102,8 @@ countryIssued.addEventListener("blur", countryIssuedVerify, true);
 uniIssued.addEventListener("blur", uniIssuedVerify, true);
 firstPositionDate.addEventListener("blur", firstPositionDateVerify, true);
 reEmploymentDate.addEventListener("blur", reEmploymentDateVerify, true);
+vacation.addEventListener("blur", vacation, true);
+employeeType.addEventListener("blur", employeeType, true);
 issuedNo.addEventListener("blur", issuedNoVerify, true);
 issuedDate.addEventListener("blur", issuedDateVerify, true);
 empLevel.addEventListener("blur", empLevelVerify, true);
@@ -108,6 +112,7 @@ education.addEventListener("blur", educationVerify, true);
 phoneNo.addEventListener("blur", phoneNoVerify, true);
 empPosition.addEventListener("blur", empPositionVerify, true);
 posGivenDate.addEventListener("blur", posGivenDateVerify, true);
+
 
 function Validate(){
  if(name.value == ""){
@@ -279,7 +284,6 @@ if(unit.selectedIndex == 0){
           return false;
          }
 }
-
 
 function nameVerify(){
  if(name.value !=""){
@@ -481,4 +485,7 @@ function posGivenDateVerify(){
 //reset form
 function reset() {
   document.getElementById("myForm").reset();
+  var image_x= document.getElementById("profileDisplay");
+  image_x.parentNode.removeChild(image_x);
 }
+
