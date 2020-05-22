@@ -50,7 +50,11 @@ onsubmit="return Validate()" id="myForm" enctype="multipart/form-data">
 <fieldset>
 <legend><h2> بيانات شخصية </h2> </legend><br><br>
 <!-- user profile picture-->
+<<<<<<< HEAD
  <!-- <?php if (!empty($msg)): ?>
+=======
+<!-- <?php if (!empty($msg)): ?>
+>>>>>>> 401d82e8d457924eff6ef8b5f3188576345c48fb
 <p class="imageUpload"><?php echo $msg;?></p>
 <?php endif; ?> -->
 <div class="text">
@@ -319,7 +323,11 @@ onsubmit="return Validate()" id="myForm" enctype="multipart/form-data">
 
  <div><p>اضافة المستمسكات المطلوبة</p>
 
+<<<<<<< HEAD
 <input type="file" name="files[]" multiple require><br>
+=======
+<input type="file" name="files[]" multiple="multiple"><br>
+>>>>>>> 401d82e8d457924eff6ef8b5f3188576345c48fb
 </div><br>
 <?php include 'php/docUpload.php' ?>
 <div>
