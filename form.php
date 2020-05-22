@@ -1,4 +1,5 @@
-<?php include 'php/imageUpload.php'?>
+<?php include 'php/imageUpload.php' ;
+ include 'php/employees.php';?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -49,15 +50,15 @@ onsubmit="return Validate()" id="myForm" enctype="multipart/form-data">
 <fieldset>
 <legend><h2> بيانات شخصية </h2> </legend><br><br>
 <!-- user profile picture-->
-<?php if (!empty($msg)): ?>
-<div class="alert <?php echo $css_class; ?>">
-<?php echo $msg; ?>
-<?php endif; ?>
+ <!-- <?php if (!empty($msg)): ?>
+<p class="imageUpload"><?php echo $msg;?></p>
+<?php endif; ?> -->
+<div class="text">
+اضف صورتك هنا</p></div>
     <div>    
     <img src="placeholder.png" id="profileDisplay" onclick="triggerClick()"/>
     <input type="file" id="profileImage" name="picture" onchange="displayImage(this)" 
-    style="display:none"> 
-  <p style="float:left; padding-top:90px">  اضف صورتك هنا</p>
+    style="display:none;"> 
 </div>   
 <div id="name_div">
 <lable><br>الاسم الرباعي واللقب</br></lable>
@@ -75,11 +76,11 @@ onsubmit="return Validate()" id="myForm" enctype="multipart/form-data">
         <label> <br>الجنس</br></label>
             <hr style="width:20%; float:right"></hr><br>
               <div>
-                  <input type="radio" name="gender" onclick="genderVerify()" style="position:relative;right: 70px;" id="male" />
+                  <input type="radio" name="gender" value="ذكر" onclick="genderVerify()" style="position:relative;right: 70px;" id="male" />
                   <label for="radio6">ذكر</label>
               </div>
               <div >
-                  <input type="radio" name="gender" onclick="genderVerify()"style="position:relative;right:70px;" id="femal" />
+                  <input type="radio" name="gender" value="انثى"onclick="genderVerify()"style="position:relative;right:70px;" id="femal" />
                   <label for="radio7">انثى</label>
             </div>
             <div id="gender_error" class="val_error"></div>    
@@ -100,17 +101,17 @@ onsubmit="return Validate()" id="myForm" enctype="multipart/form-data">
     <input type="text" name="house" id="houseNo">
     <div id="house_error" class="val_error"></div>
     
-<label><br> الحالة الزوجية</br></label>
+<label><br> الحالة الزوجية<br/></label>
 <select class="select-css" id="stutas" name="stutas">
  <option value="0"> الحالة الزوجية </option>
- <option value="1"> متزوج  </option>
-<option value="2"> متزوجة </option>
-<option value="3">  ارمل</option>
-<option value="4"> ارملة </option>
-<option value="5"> مطلق </option>
-<option value="6"> مطلقة </option>
-<option value="9"> اعزب </option>
-<option value="10"> عزباء </option>
+ <option value="متزوج"> متزوج  </option>
+<option value="متزوجة"> متزوجة </option>
+<option value="ارمل">  ارمل</option>
+<option value="ارملة"> ارملة </option>
+<option value="مطلق"> مطلق </option>
+<option value="مطلقة"> مطلقة </option>
+<option value="اعزب"> اعزب </option>
+<option value="عزباء"> عزباء </option>
 </select> 
 <div id="status_error" class="val_error"></div>
 
@@ -298,7 +299,7 @@ onsubmit="return Validate()" id="myForm" enctype="multipart/form-data">
  <div id="phoneNo_error" class="val_error"></div>
 
  <label><br>المنصب الاداري</br></label>
- <select class="select-css" id="position" name="position">
+ <select class="select-css" id="empPosition" name="empPosition">
     <option>المنصب الاداري</option>
     <option> عميد </option>
     <option> معاون العميد للشؤون الادارية   </option>
@@ -318,7 +319,7 @@ onsubmit="return Validate()" id="myForm" enctype="multipart/form-data">
 
  <div><p>اضافة المستمسكات المطلوبة</p>
 
-<input type="file" name="files[]" multiple><br>
+<input type="file" name="files[]" multiple require><br>
 </div><br>
 <?php include 'php/docUpload.php' ?>
 <div>

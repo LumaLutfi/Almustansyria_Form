@@ -1,54 +1,25 @@
 <?php
-//Upload Image
-$msg = "";
-$css_class="";
-$conn = mysqli_connect("localhost", "root","", "AlMustanseriya_Staff");
-$conn->set_charset("UTF8"); //insert arabic text into database
-if (!$conn){
-    
-    die('Could not connect: ' . mysqli_error());
-    
-  }
-if(isset($_POST['submit']))
-{
+include 'db_conn.php';
 
-$imgFile = $_FILES['picture']['name'];
-$tmp_dir = $_FILES['picture']['tmp_name'];
-$imgSize = $_FILES['picture']['size'];
+
+  //if file upload form is submitted
+if(isset($_POST['submit'])){
+//echo "<pre>", print_r($_FILES['picture']['name']), "</pre>";
+$name = $_POST['fname'];
 //to avoid conflict with other images name so the name should be unique
 $profileImageName= time() . '_' . $_FILES['picture']['name'];
-$name=$_POST['fname'];
 $upload_dir = 'images/'. $profileImageName; // upload directory
 
-$imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension
-
-// valid image extensions
-//$valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
-
-// rename uploading image
-$coverpic = rand(1000,1000000).".".$imgExt;
-
-// allow valid image file formats
-//if(in_array($imgExt, $valid_extensions))
-//{
-// Check file size '5MB'
-//if($imgSize < 5000000)
-//{
-
-if(move_uploaded_file($tmp_dir,$upload_dir.$coverpic)){
+if(move_uploaded_file($_FILES['picture']['tmp_name'], $upload_dir)){
+      
     $sql = "INSERT INTO profile_image (fname, picture) VALUES ('$name','$profileImageName')";
-    
-    if (mysqli_query($conn, $sql)){
-        $msg = "Image uploaded";
-        $css_class="alert-success";
-    }else{
-        $errMSG = "Database Error: Faild to save user";
-        $css_class="alert-danger";
-    }
-  }
+if(mysqli_query($conn, $sql)){
+echo "Image uploaded and saved to db";
+}else{
+echo "db Error: Failed to save user";
 }
-//else{
-//$errMSG = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-//}
-//}
+}else{
+    echo "Failed to upload";
+ }
+}
 ?>
