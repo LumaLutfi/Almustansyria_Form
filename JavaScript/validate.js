@@ -33,7 +33,15 @@ const college = document.forms["vform"]["college"]
 const department = document.forms["vform"]["department"]
 const unit = document.forms["vform"]["unit"]
 const major = document.forms["vform"]["genaralMajor"]
+<<<<<<< HEAD
 const position = document.forms["vform"]["position"]
+=======
+<<<<<<< HEAD
+const position = document.forms["vform"]["position"]
+=======
+const position = document.forms["vform"]["title"]
+>>>>>>> 401d82e8d457924eff6ef8b5f3188576345c48fb
+>>>>>>> dedd5312db85a29defc1f8ab1c567abdcaef62b3
 const posDate = document.forms["vform"]["titleDate"];
 const countryIssued = document.forms["vform"]["country_issued"];
 const uniIssued = document.forms["vform"]["issuedCertificateUniversity"];
@@ -47,7 +55,15 @@ const empLevel = document.forms["vform"]["empLevel"];
 const empStage = document.forms["vform"]["empStage"];
 const education = document.forms["vform"]["higherEducation"];
 const phoneNo = document.forms["vform"]["cellphone"];
+<<<<<<< HEAD
 const empPosition = document.forms["vform"]["empPosition"];
+=======
+<<<<<<< HEAD
+const empPosition = document.forms["vform"]["empPosition"];
+=======
+const empPosition = document.forms["vform"]["position"];
+>>>>>>> 401d82e8d457924eff6ef8b5f3188576345c48fb
+>>>>>>> dedd5312db85a29defc1f8ab1c567abdcaef62b3
 const posGivenDate = document.forms["vform"]["positionDate"];
 
 
@@ -102,8 +118,18 @@ countryIssued.addEventListener("blur", countryIssuedVerify, true);
 uniIssued.addEventListener("blur", uniIssuedVerify, true);
 firstPositionDate.addEventListener("blur", firstPositionDateVerify, true);
 reEmploymentDate.addEventListener("blur", reEmploymentDateVerify, true);
+<<<<<<< HEAD
 vacation.addEventListener("blur", vacationVerify, true);
 employeeType.addEventListener("blur", employeeTypeVerify, true);
+=======
+<<<<<<< HEAD
+vacation.addEventListener("blur", vacationVerify, true);
+employeeType.addEventListener("blur", employeeTypeVerify, true);
+=======
+vacation.addEventListener("blur", vacation, true);
+employeeType.addEventListener("blur", employeeType, true);
+>>>>>>> 401d82e8d457924eff6ef8b5f3188576345c48fb
+>>>>>>> dedd5312db85a29defc1f8ab1c567abdcaef62b3
 issuedNo.addEventListener("blur", issuedNoVerify, true);
 issuedDate.addEventListener("blur", issuedDateVerify, true);
 empLevel.addEventListener("blur", empLevelVerify, true);
@@ -485,6 +511,15 @@ function posGivenDateVerify(){
 //reset form
 function reset() {
   document.getElementById("myForm").reset();
+<<<<<<< HEAD
   
+=======
+<<<<<<< HEAD
+  
+=======
+  var image_x= document.getElementById("profileDisplay");
+  image_x.parentNode.removeChild(image_x);
+>>>>>>> 401d82e8d457924eff6ef8b5f3188576345c48fb
+>>>>>>> dedd5312db85a29defc1f8ab1c567abdcaef62b3
 }
 
