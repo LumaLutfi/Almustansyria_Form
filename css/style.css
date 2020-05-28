@@ -34,6 +34,29 @@ width:40%;
 color:white;
 }
 
+.text{
+    float:left;
+    padding-top:10px;
+    position:relative; 
+    left:140px; 
+    font-size:10px;
+}
+.imageUpload{
+    text-align:center;
+    color:#001a00;
+    background-color:green;
+    opacity:0.3;
+    border:2px solid rgb(3, 43, 3);
+    border-radius: 5px;
+}
+.errorImage{
+    color:red;
+    text-align: center;
+    font-size: 10px;
+    background: rgb(223, 166, 166);
+    border-radius: 5px;
+    
+}
 header, aside, article, footer, section {
       display: block;
      }
@@ -94,6 +117,9 @@ header, aside, article, footer, section {
     margin: 10px auto;
     display: block;
     float: left;
+}
+#profileDisplay:hover{
+    opacity: 0.3;
 }
     /* select style ----------------------------------------*/
     .select-css {
@@ -180,14 +206,17 @@ header, aside, article, footer, section {
       border-radius: 12px;
       box-shadow: 3px 3px 3px 3px silver;
       color: white;
-      padding: 10px 32px;
+      padding: 10px;
       text-align: center;
       text-decoration: none;
       font-size: 20px;
       display: inline-block;
-      margin: 4px 2px;
       cursor: pointer;
       width: 20%;
+      
+}
+.btn:hover{
+    background-color: rgb(22, 90, 216);
 }
  input[type=text]:focus, input[type=button]:focus, input[type=submit]:focus {
     outline: none;
